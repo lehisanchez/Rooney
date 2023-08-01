@@ -14,7 +14,7 @@ jobs:
     - name: Install dependencies
       run: bundle install
     - name: Run tests and collect coverage
-      run: bundle exec rspec
+      run: bundle exec rake
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       env:
