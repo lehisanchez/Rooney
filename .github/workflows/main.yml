@@ -1,25 +1,21 @@
 name: RSpec
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+on: [push, pull_request]
 jobs:
-
-  run-rspec-tests:
-
+  run:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Set up Ruby latest
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1'
+        ruby-version: 'head'
         bundler-cache: true
     - name: Install dependencies
       run: bundle install
-    - name: Run tests
+    - name: Run tests and collect coverage
       run: bundle exec rspec
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
