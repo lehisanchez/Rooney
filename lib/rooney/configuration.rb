@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module Rooney
-  # Allow configuration of API-HEADER, API-KEY, API-BASE-URL
+  # Allow configuration of the api header parameter, api-key, and base url
   module Configuration
-    attr_accessor :header, :api_key, :base_url
+    attr_accessor :api_header, :api_key, :api_url
 
     def configure
       yield self
