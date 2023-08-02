@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+# require "faker"
+# require "webmock/rspec"
 require "simplecov"
-SimpleCov.start
-
 require "simplecov-cobertura"
+
+SimpleCov.start
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
 require "rooney"
