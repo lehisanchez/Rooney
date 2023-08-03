@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
-# require "faker"
-# require "webmock/rspec"
 require "simplecov"
-require "simplecov-cobertura"
-
 SimpleCov.start
+
+require "simplecov-cobertura"
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
 require "rooney"
 
 RSpec.configure do |config|
+  config.after do
+    Rooney.set_default_configuration
+  end
+
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
@@ -20,4 +22,8 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include RSpec::Matchers
+  config.mock_with :rspec
+  config.order = "random"
 end
