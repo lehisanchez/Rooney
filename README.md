@@ -6,7 +6,7 @@
 
 Add this to your Gemfile:
 
-    gem 'rooney'
+    gem 'rooney', git: 'https://github.com/lehisanchez/rooney'
 
 and run `bundle install`.
 
