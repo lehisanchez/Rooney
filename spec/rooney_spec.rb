@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 RSpec.describe Rooney do
-  it "is valid" do
-    expect(described_class).to be_a(Module)
-  end
+  it { expect(described_class).to be_a(Module) }
 
-  it "has a version number" do
+  it "is expected to have a version number" do
     expect(Rooney::VERSION).not_to be_nil
   end
 
+  # Test configurable attributes
   describe ".configuration" do
     let(:config_value) { "placeholder_value" }
 
