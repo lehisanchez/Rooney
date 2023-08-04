@@ -17,9 +17,9 @@ module Rooney
     end
 
     def set_default_configuration
-      self.api_header = nil
       self.api_key    = nil
       self.api_url    = nil
+      self.api_header = nil
     end
   end
 end
