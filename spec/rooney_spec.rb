@@ -20,8 +20,16 @@ RSpec.describe Rooney do
       end
     end
 
-    it { expect(described_class.api_header).to eq config_value }
-    it { expect(described_class.api_url).to    eq config_value }
-    it { expect(described_class.api_key).to    eq config_value }
+    it "has a valid api_url" do
+      expect(described_class.api_url).to eq config_value
+    end
+
+    it "has a valid api_key" do
+      expect(described_class.api_key).to eq config_value
+    end
+
+    it "has a valid api_header" do
+      expect(described_class.api_header).to eq config_value
+    end
   end
 end
