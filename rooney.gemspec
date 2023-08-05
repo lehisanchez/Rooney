@@ -3,19 +3,18 @@
 require_relative "lib/rooney/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "rooney"
-  spec.version = Rooney::VERSION
-  spec.authors = ["Lehi Sanchez"]
-  spec.email = ["17449+lehisanchez@users.noreply.github.com"]
-  spec.summary = "A Ruby gem to interface with api-football.com."
+  spec.name        = "rooney"
+  spec.version     = Rooney::VERSION
+  spec.authors     = ["Lehi Sanchez"]
+  spec.email       = ["17449+lehisanchez@users.noreply.github.com"]
+  spec.summary     = "A Ruby gem to interface with api-football.com."
   spec.description = "A Ruby gem to interface with api-football.com. This gem is only compatible with v3 of the api."
-  spec.homepage = "https://github.com/lehisanchez/rooney"
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/lehisanchez/rooney"
-  spec.metadata["changelog_uri"] = "https://github.com/lehisanchez/rooney"
+  spec.homepage    = "https://github.com/lehisanchez/rooney"
+  spec.license     = "MIT"
+  spec.metadata["allowed_push_host"]     = "TODO: Set to your gem server 'https://example.com'"
+  spec.metadata["homepage_uri"]          = spec.homepage
+  spec.metadata["source_code_uri"]       = "https://github.com/lehisanchez/rooney"
+  spec.metadata["changelog_uri"]         = "https://github.com/lehisanchez/rooney"
   spec.metadata["rubygems_mfa_required"] = "true"
 
   # Specify which files should be added to the gem when it is released.
@@ -30,5 +29,9 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 2.6.0"
+
   # Dependencies
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end

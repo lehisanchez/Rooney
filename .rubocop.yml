@@ -31,3 +31,6 @@ Metrics/BlockLength:
 Naming/FileName:
   Exclude:
     - 'Rakefile'
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
