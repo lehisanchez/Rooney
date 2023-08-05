@@ -34,3 +34,6 @@ Naming/FileName:
 
 Gemspec/DevelopmentDependencies:
   Enabled: false
+
+Style/FetchEnvVar:
+  Enabled: false

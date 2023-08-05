@@ -6,6 +6,9 @@ SimpleCov.start
 require "simplecov-cobertura"
 SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 
+require "dotenv/load"
+Dotenv.require_keys("API_KEY", "API_URL", "API_HEADER")
+
 require "rooney"
 
 RSpec.configure do |config|
