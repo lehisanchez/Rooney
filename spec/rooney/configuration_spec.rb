@@ -3,8 +3,8 @@
 RSpec.describe Rooney::Configuration do
   subject(:described_module) { Rooney }
 
-  let(:api_key) { ENV["API_KEY"] }
-  let(:api_url) { ENV["API_URL"] }
+  let(:api_key)    { ENV["API_KEY"] }
+  let(:api_url)    { ENV["API_URL"] }
   let(:api_header) { ENV["API_HEADER"] }
 
   before do
@@ -15,17 +15,9 @@ RSpec.describe Rooney::Configuration do
     end
   end
 
-  it { expect(described_class).to be_a(Module) }
-
-  it "is expected to set api_key" do
+  it "is expected to be configurable", :aggregate_failures do
     expect(described_module.api_key).to eq api_key
-  end
-
-  it "is expected to set api_url" do
     expect(described_module.api_url).to eq api_url
-  end
-
-  it "is expected to set api_header" do
     expect(described_module.api_header).to eq api_header
   end
 end
